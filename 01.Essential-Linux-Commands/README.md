@@ -165,5 +165,58 @@ vi Key Commands:
     - :wq: Save and quit Vim.
     - :q!: Quit without saving changes.
 
+# 2. Intermediate Commands
+## 2.1 File Permissions and Ownership
+## i. •	chmod command - Change file modes or Access Control Lists
+The chmod command changes file or directory permissions, such as read, write, and execute.
+chmod command syntax: `chmod [who][operator][permission] file`
+### who: Specifies the user classes whose permissions you are modifying. It can be:
+    - u for the file owner (user)
+    - g for the group
+    - o for others (everyone else)
+    - a for all (user, group, and others)
+### operator: Specifies how the permission should be changed. It can be:
+    - + to add permissions
+    - - to remove permissions
+    - = to set exact permissions
+### permission: Specifies the permission to be changed. It can be:
+    - r for read
+    - w for write
+    - x for execute
+Example: `chmod u+x file.txt` [This command adds execute permission for the file owner]
+Set permissions to read, write, and execute for owner, and read and execute for group and others:
+![set permission](./img/26.png)
 
+## ii. chown command - Change file owner and group
+The chown command changes the ownership of a file, directory, or symbolic link to a specified user.
 
+chown command syntax: `chown [OPTIONS] USER[:GROUP] FILE...`
+
+    - USER: The username or user ID (UID) of the new owner.
+    - GROUP: The group name or group ID (GID) of the new group. This is
+      optional
+    - FILE...: One or more files or directories to change ownership.
+
+Change the owner of a file syntax: `chown newowner filename`
+
+Change the owner and group of a file syntax: `chown newowner:newgroup filename`
+
+Change the owner of a directory and its contents recursively syntax: `chown -R newowner directory`
+
+Change only the group of a file: `chown :newgroup filename`
+
+## iii. chgrp command - Change group ownership
+The chgrp command in Linux is used to change the group ownership of files and directories
+chgrp syntax command: `chgrp [OPTION] GROUP FILE...`
+### Options
+    - -c, --changes: Report when a change is made.
+    - -f, --silent, --quiet: Suppress most error messages.
+    - -R, --recursive: Operate on files and directories recursively.
+    - and so on.
+Change the group of a single file syntax: `chgrp newgroup filename`
+
+Change the group of multiple files syntax: `Change the group of multiple files`
+
+Change the group of a directory syntax: `chgrp newgroup directoryname`
+
+Change the group recursively syntax: `chgrp -R newgroup directoryname`
