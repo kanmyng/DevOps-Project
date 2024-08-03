@@ -66,6 +66,7 @@ The mkdir command creates new directories. Multiple directories an be created si
 
 mkdir command syntax: `mkdir directory.name`
 ![mkdir command](./img/11.png) 
+
 Use the ls command to verify the mkdir command operation.
 ![mkdir confirmation](./img/12.png)
 
