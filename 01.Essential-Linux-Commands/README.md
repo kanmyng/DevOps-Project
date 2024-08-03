@@ -113,7 +113,7 @@ less command syntax:`less filename.txt`
     - 'n' to repeat the last search forward.
     - 'N' to repeat the last search backward.
     - 'q' to quit the viewer.
-## iv. 'head' commad - View the first few lines of a file
+## iv. 'head' command - View the first few lines of a file
 The head command shows the first few lines of a file. You can specify the number of lines from the command line with an option.
 
 head command syntax: `head [Option] filename.txt`
@@ -125,9 +125,9 @@ The tail command prints the last 10 lines of a file, useful for reviewing newly-
 tail command syntax: `tail [Option] filename.txt`
 ![tail command](./img/21.png)
 
-## vi. Nano & vi- Simple text editor
-Two of the most widely used Linux text editors are Nano and vi, each with advantages and disadvantages of their own. Nano is incredibly user-friendly and basic. Nano is great for binners who just wants to open a text file, make a few quick changes, and close it, this is ideal. With its very clear screen and commands that can be executed on it for simple editing and navigation, Nano doesn't require any prior knowledge to begin using. On the other hand, vi is incredibly configurable and powerful. Power users discover that it becomes incredibly simple to use because it has so many power features and shortcuts. Thus, vi can be used to make intricate changes to a file.
-#### To execute nano command
+## vi. 'Nano' & 'vi' - Simple text editor
+Two of the most widely used Linux text editors are nano and vi, each with advantages and disadvantages of their own. Nano is incredibly user-friendly and basic. Nano is great for binners who just wants to open a text file, make a few quick changes, and close it, this is ideal. With its very clear screen and commands that can be executed on it for simple editing and navigation, Nano doesn't require any prior knowledge to begin using. On the other hand, vi is incredibly configurable and powerful. Power users discover that it becomes incredibly simple to use because it has so many power features and shortcuts. Thus, vi can be used to make intricate changes to a file.
+#### To execute 'nano' command
 nano command syntax: `filename.txt`
 ![nano command](./img/22.png)
 ![tail command1](./img/23.png)
@@ -141,8 +141,8 @@ nano command syntax: `filename.txt`
     - ^C (Ctrl + C): Show the current cursor position
     - ^\ (Ctrl + ): Replace text
  To save the changes, press Ctrl + O, then press enter to exit. To close Nano, press Ctrl + X. If you have unsaved changes, you’ll be prompted to save them before Nano exits.
-#### To execute vi command
-Basic Vim Modes:
+#### To execute 'vi' command
+Basic Vi Modes:
 Normal Mode: For navigation and text manipulation (default mode when Vim starts).
 Insert Mode: For text entry (press i to enter this mode from Normal Mode).
 Command-Line Mode: For executing commands (press : to enter this mode from Normal Mode).
@@ -168,7 +168,7 @@ vi Key Commands:
 
 # 2. Intermediate Commands
 ## 2.1 File Permissions and Ownership
-## i. •	chmod command - Change file modes or Access Control Lists
+## i. 'chmod' command - Change file modes or Access Control Lists
 The chmod command changes file or directory permissions, such as read, write, and execute.
 chmod command syntax: `chmod [who][operator][permission] file`
 ### who: Specifies the user classes whose permissions you are modifying. It can be:
@@ -188,7 +188,7 @@ Example: `chmod u+x file.txt` [This command adds execute permission for the file
 Set permissions to read, write, and execute for owner, and read and execute for group and others:
 ![set permission](./img/26.png)
 
-## ii. chown command - Change file owner and group
+## ii. 'chown' command - Change file owner and group
 The chown command changes the ownership of a file, directory, or symbolic link to a specified user.
 
 chown command syntax: `chown [OPTIONS] USER[:GROUP] FILE...`
@@ -206,7 +206,7 @@ Change the owner of a directory and its contents recursively syntax: `chown -R n
 
 Change only the group of a file: `chown :newgroup filename`
 
-## iii. chgrp command - Change group ownership
+## iii. 'chgrp' command - Change group ownership
 The chgrp command in Linux is used to change the group ownership of files and directories
 chgrp syntax command: `chgrp [OPTION] GROUP FILE...`
 ### Options
@@ -221,3 +221,59 @@ Change the group of multiple files syntax: `Change the group of multiple files`
 Change the group of a directory syntax: `chgrp newgroup directoryname`
 
 Change the group recursively syntax: `chgrp -R newgroup directoryname`
+
+## 2.2 Searching and Finding Files
+## i. 'find' command - Search for files in a directory hierarchy
+The find command searches for files within a specified directory and can perform subsequent operations on them.
+find command syntax" `find [path] [expression]`
+![find command](./img/27.png)
+
+## ii. 'grep' command - Search text using patterns
+The grep command searches for specific text within files, returning lines that match the search criteria.
+
+The basic syntax for grep is: `grep [options] pattern [file...]`
+
+    - pattern: The text pattern to search for.
+    - file...: One or more files to search. 
+## Commonly Used Options
+Here are some commonly used options with grep:
+
+     -i: Ignore case distinctions in both the pattern and the input
+         files
+     -v: Invert the match, showing lines that do not match the
+         pattern
+     -r or -R: Recursively search directories.
+     -l: List filenames containing the match.
+     -c: Count the number of matching lines.
+
+Example of grep syntax: `grep "hello" file.txt`
+
+Case-Insensitive Search syntax: `grep -i "hello" file.txt`
+
+## iii. 'locate' command - Find files by name
+The locate command searches for files by name. Adding the -i argument makes the search case-insensitive.
+
+The basic locate syntax: `locate [options] pattern`
+
+Common Examples:
+Basic Usage: Find a file by its name: `locate filename`
+
+Case-Insensitive Search: Use the -i option to perform a case-insensitive search: `locate -i filename`
+
+# 3.0 System Administration
+## 3.1 'sudo' command- Execute a command as another user
+The basic syntax of the sudo command is: `sudo [OPTION] COMMAND [ARGUMENTS...]`
+
+## i. Running a Command as Root
+To run a command as the root user: `sudo command`
+Example: `sudo apt-get update`
+
+## ii. Running a Command as a Specific User
+To run a command as a specific user, use the -u option: `sudo -u username command`
+Example: `sudo -u mark ls /home/mark`
+
+## Common Options: 
+    - -u: Specify a user to run as. Default is root.
+    - -i: Start a shell as the target user.
+    - -k or --reset-timestamp: Invalidate the user's sudo timestamp.
+    - and many more.
