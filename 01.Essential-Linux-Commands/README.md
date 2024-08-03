@@ -1,4 +1,6 @@
 # Essential Linux Commands
+## Objective
+This documentation manual aims to offer a step by step guide on basic Linux commands for Linux users to master a skillset for an effective and productive use of Linux environment on file management, navigation, text editing, and system administration tasks. It introduces the basic to intermediate commands on the Linux command line with explanations, syntax examples, and use cases to enhance your competence of system management using the Linux command-line.
 # 1. Basic Commands
 ## 1.1  Navigation and File Operations
 Navigation and file operations in Linux involve a set of essential commands that allow users to interact with the filesystem
